@@ -1,4 +1,0 @@
-databaseChangeLog:
-  - include:
-      relativeToChangelogFile: true
-      file: changelogs/changelog-1.0.0-ddl.yaml
