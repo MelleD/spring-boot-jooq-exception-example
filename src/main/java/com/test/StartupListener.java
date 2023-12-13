@@ -16,8 +16,6 @@ public class StartupListener {
 
    @EventListener( ApplicationReadyEvent.class )
    public void doSomethingAfterStartup() {
-      //dslContext.settings().setBatchSize( 100 );
-
       final StringBuilder stringBuilder = new StringBuilder( "SELECT * FROM test WITH (TABLOCKX, HOLDLOCK)" );
       stringBuilder.append( " WHERE 0 = 1" );
       stringBuilder.append( " WAITFOR DELAY '00:01'" );
