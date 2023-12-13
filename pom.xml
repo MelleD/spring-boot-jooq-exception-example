@@ -1,0 +1,65 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>3.2.0</version>
+   </parent>
+
+   <artifactId>spring-boot-jooq-exception-example</artifactId>
+   <version>DEV-SNAPSHOT</version>
+
+   <dependencies>
+      <!-- Spring -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-jooq</artifactId>
+         <!-- Exclude the jOOQ Open Source Edition -->
+         <exclusions>
+            <exclusion>
+               <groupId>org.jooq</groupId>
+               <artifactId>jooq</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+
+      <!--  jOOQ  -->
+      <dependency>
+         <groupId>org.jooq.pro</groupId>
+         <artifactId>jooq</artifactId>
+         <version>3.18.7</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-configuration-processor</artifactId>
+         <optional>true</optional>
+      </dependency>
+
+      <!--  Database -->
+      <dependency>
+         <groupId>org.liquibase</groupId>
+         <artifactId>liquibase-core</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>com.microsoft.sqlserver</groupId>
+         <artifactId>mssql-jdbc</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>org.testcontainers</groupId>
+         <artifactId>testcontainers</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.testcontainers</groupId>
+         <artifactId>mssqlserver</artifactId>
+      </dependency>
+   </dependencies>
+
+</project>
